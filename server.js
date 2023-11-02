@@ -39,7 +39,7 @@ app.use(passport.session());
 
 
 app.use('/', indexRouter);
-app.use('/user', usersRouter);
+app.use('/users', usersRouter);
 app.use('/menus', menusRouter);
 app.use('/reviews', reviewsRouter);
 
