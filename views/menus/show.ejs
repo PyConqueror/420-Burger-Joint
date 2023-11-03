@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= menu.name %></title>
-    <link rel="stylesheet" href="/styles/main.css"> <!-- Assuming you have a styles file -->
+    <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
     <h2><%= menu.name %></h2>
@@ -19,7 +19,7 @@
         </thead>
         <tbody>
             <% if(menu.reviews.length) { %>
-                <% reviews.forEach(review => { %>
+                <% menu.reviews.forEach(review => { %>
                 <tr>
                     <td><%= review.user.username %></td>
                     <td><%= review.comment %></td>
