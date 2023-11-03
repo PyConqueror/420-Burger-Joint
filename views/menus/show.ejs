@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="/styles/main.css"> <!-- Assuming you have a styles file -->
 </head>
 <body>
-
     <h2><%= menu.name %></h2>
     <p><%= menu.description %></p>
     <table>
@@ -34,5 +33,7 @@
             <% } %>
         </tbody>
     </table>
+    <a href="reviews/<%= menu._id %>">Add A Review</a>
+
 </body>
 </html>
