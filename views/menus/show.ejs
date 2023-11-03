@@ -21,14 +21,14 @@
             <% if(reviews.length) { %>
                 <% reviews.forEach(review => { %>
                     <tr>
-                        <td><%= review.user.username %></td> <!-- Assuming the user's name is stored in username property -->
+                        <td><%= review.user.username %></td> 
                         <td><%= review.comment %></td>
                         <td><%= review.rating %></td>
                     </tr>
                 <% }) %>
             <% } else { %>
                 <tr>
-                    <td colspan="3">No reviews yet.</td> <!-- Updated colspan to 3 since there are 3 columns now -->
+                    <td colspan="3">No reviews yet.</td>
                 </tr>
             <% } %>
         </tbody>

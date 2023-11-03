@@ -6,6 +6,24 @@
     <title>Document</title>
 </head>
 <body>
-    <p>all reviews</p>
+    <h1>Food review list</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% reviews.forEach(function(review) { %>
+                <tr>
+                    <td><%= review.user.username %></td> 
+                    <td><%= review.comment %></td>
+                    <td><%= review.rating %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
 </body>
 </html>
