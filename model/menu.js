@@ -5,7 +5,6 @@ const menuSchema = new Schema({
     name: String,
     description: String,
     price: Number,
-    imagePath: String,
     reviews: [{
         type: Schema.Types.ObjectId,
         ref: 'Review'
