@@ -19,11 +19,11 @@ async function reviewPage(req, res) {
 
 async function create(req, res) {
     const menuItem = await MenuItem.findById(req.params.id);
-    const loggedInUser = '65444e4698a1546af46bca63';// tester1 id
+    const test = '65444e4698a1546af46bca63';// tester1 id
     const { comment, rating } = req.body;
     const review = new Review({
         menuItem: menuItem._id,
-        user: loggedInUser,
+        user: test,
         comment: comment,
         rating: rating
     });
