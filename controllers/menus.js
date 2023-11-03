@@ -1,5 +1,6 @@
 const MenuItem = require('../model/menu');
 const Review = require('../model/review');
+const User = require('../model/user');
 
 module.exports = {
     index,
@@ -13,7 +14,7 @@ async function index(req, res) {
 
 async function show(req, res) {
     const menu = await MenuItem.findById(req.params.id);
-    const reviews = await Review.find({menuItem: req.params.id})
+    const reviews = await Review.find({menuItem: req.params.id}).populate('user')
     console.log(reviews)
     res.render('menus/show', { menu, reviews })
 }; 
