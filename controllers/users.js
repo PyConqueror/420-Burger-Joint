@@ -10,7 +10,7 @@ module.exports = {
 };
 
 function registerPage(req, res) {
-    res.render('users/register', {msg: ' '})
+    res.render('users/register', {error: ' '})
 }
 
 function loginPage(req, res) {
@@ -25,9 +25,9 @@ function login(req, res, next) {
 }
 
 async function register(req, res) {
-    const existingUser = await User.findOne({ username: req.body.username });
+    const existingUser = await User.findOne({username: req.body.username });
     if (existingUser) {
-        res.render('users/register',{ error: 'Username already taken. Please choose another.' })
+        res.render('users/register',{error: 'Username already taken. Please choose another.' })
         return
     }
     const user = new User(req.body);
