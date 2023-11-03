@@ -3,9 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menus</title>
+    <title>Menu Items</title>
+    <link rel="stylesheet" href="/stylesheets/style.css"> <!-- Adjust the path as needed -->
 </head>
 <body>
-    <h1>menu items</h1>
+    <h1>Menu Items</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% menus.forEach(function(menu) { %>
+                <tr>
+                    <td><a href="menus/<%= menu._id %>"><%= menu.name %></a></td>
+                    <td><%= menu.description %></td>
+                    <td>$<%= menu.price %>$</td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
 </body>
 </html>
