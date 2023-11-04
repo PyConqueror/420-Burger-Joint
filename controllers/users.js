@@ -6,7 +6,8 @@ module.exports = {
     loginPage,
     login,
     register,
-    logout
+    logout,
+    profile
 };
 
 function registerPage(req, res) {
@@ -38,4 +39,9 @@ async function register(req, res) {
 function logout(req, res) {
     req.logout();
     res.redirect('/');
+}
+
+function profile(req, res) {
+    user = req.user
+    res.render('users/profile', {user})
 }
