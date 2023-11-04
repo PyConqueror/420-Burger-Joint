@@ -9,7 +9,6 @@ passport.use(new LocalStrategy(
           if (!user) {
               return done(null, false, { message: 'Incorrect username.' });
           }
-          // Assuming you're storing plain-text passwords (not recommended!)
           if (user.password !== password) {
               return done(null, false, { message: 'Incorrect password.' });
           }
