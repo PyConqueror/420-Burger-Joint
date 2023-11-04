@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 const usersController = require('../controllers/users');
+const ensureAuthenticated = require('../config/ensureAuthenticated');
+
 
 router.get('/login', usersController.loginPage);
 router.post('/login', usersController.login);

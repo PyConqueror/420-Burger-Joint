@@ -15,6 +15,5 @@ async function index(req, res) {
 async function show(req, res) {
     const menu = await MenuItem.findById(req.params.id);
     const reviews = await Review.find({menuItem: req.params.id}).populate('user')
-    console.log(reviews)
     res.render('menus/show', { menu, reviews })
 }; 

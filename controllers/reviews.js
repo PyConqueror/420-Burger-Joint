@@ -14,7 +14,8 @@ async function index(req, res) {
 
 async function reviewPage(req, res) {
     const menu = await MenuItem.findById(req.params.id);
-    res.render('reviews/review', { menu })
+    const user = req.user
+    res.render('reviews/review', { menu, user })
 };
 
 async function create(req, res) {
