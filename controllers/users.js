@@ -33,7 +33,7 @@ async function register(req, res) {
     }
     const user = new User(req.body);
     await user.save();
-    res.redirect('/menus')
+    res.redirect('/')
     }
 
 function logout(req, res) {
