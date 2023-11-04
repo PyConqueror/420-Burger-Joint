@@ -9,12 +9,14 @@ module.exports = {
 
 async function index(req, res) {
     const reviews = await Review.find({}).populate('user');
-    res.render('reviews/index', { reviews })
+    user = req.user
+    res.render('reviews/index', { reviews, user })
 };
 
 async function reviewPage(req, res) {
     const menu = await MenuItem.findById(req.params.id);
-    res.render('reviews/review', { menu })
+    user = req.user
+    res.render('reviews/review', { menu, user })
 };
 
 async function create(req, res) {

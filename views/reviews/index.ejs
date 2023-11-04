@@ -7,6 +7,20 @@
     <title>Food Reviews</title>
 </head>
 <body>
+    <% if (!user){%>
+        <nav>
+          <a href="/menus">menus</a>
+          <a href="/users/register">register</a>
+          <a href="/users/login">login</a>
+        </nav>
+        <%} else{%>
+          <nav>
+            <a href="/menus">menus</a>
+            <a href="/users/register">register</a>
+            <a href="/users/logout">logout</a>
+            <a href="/users/profile">Profile check</a>
+          </nav>
+        <% } %>
     <h1>Food review list</h1>
     <table>
         <thead>

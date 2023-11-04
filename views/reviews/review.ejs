@@ -7,6 +7,22 @@
     <title>Add Review</title>
 </head>
 <body>
+    <% if (!user){%>
+        <nav>
+          <a href="/menus">menus</a>
+          <a href="/reviews">reviews</a>
+          <a href="/users/register">register</a>
+          <a href="/users/login">login</a>
+        </nav>
+        <%} else{%>
+          <nav>
+            <a href="/menus">menus</a>
+            <a href="/reviews">reviews</a>
+            <a href="/users/register">register</a>
+            <a href="/users/logout">logout</a>
+            <a href="/users/profile">Profile check</a>
+          </nav>
+        <% } %>
     <h2>review form</h2>
     <form action="/reviews/<%= menu._id %>" method="post">
         <label>Rating:</label>

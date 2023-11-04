@@ -40,7 +40,7 @@ function logout(req, res) {
     req.logout();
     res.redirect('/');
 }
-
+   
 function profile(req, res) {
     user = req.user
     res.render('users/profile', {user})

@@ -7,6 +7,22 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body>
+    <% if (!user){ %>
+        <nav>
+          <a href="/menus">menus</a>
+          <a href="/reviews">reviews</a>
+          <a href="/users/register">register</a>
+          <a href="/users/login">login</a>
+        </nav>
+        <%} else{%>
+          <nav>
+            <a href="/menus">menus</a>
+            <a href="/reviews">reviews</a>
+            <a href="/users/register">register</a>
+            <a href="/users/logout">logout</a>
+            <a href="/users/profile">Profile check</a>
+          </nav>
+        <% } %>
     <h2><%= menu.name %></h2>
     <p><%= menu.description %></p>
     <table>
