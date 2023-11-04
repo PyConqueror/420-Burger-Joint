@@ -27,11 +27,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(session({
+app.use(session({ 
   secret: process.env.SECRET_KEY,
+  cookie: { ephemeral: true }, 
+  cookieName: "session", 
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: true }
 }));
 
 app.use(passport.initialize());
