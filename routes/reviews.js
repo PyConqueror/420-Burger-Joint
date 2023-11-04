@@ -7,5 +7,5 @@ const ensureAuthenticated = require('../config/ensureAuthenticated');
 module.exports = router;
 
 router.get('/', reviewsController.index);
-router.get('/:id', reviewsController.reviewPage);
+router.get('/:id', ensureAuthenticated, reviewsController.reviewPage);
 router.post('/:id', reviewsController.create);  
