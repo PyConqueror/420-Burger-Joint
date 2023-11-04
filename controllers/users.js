@@ -36,10 +36,11 @@ async function register(req, res) {
     res.redirect('/')
     }
 
-function logout(req, res) {
-    req.logout();
-    res.redirect('/');
-}
+function logout(req, res){
+    req.logout(function() {
+        res.redirect('/')
+    });
+};
    
 function profile(req, res) {
     user = req.user
