@@ -9,14 +9,13 @@
 <body>
     <% if (!user){%>
         <nav>
+          <a href="/">Home</a>
           <a href="/reviews">reviews</a>
-          <a href="/users/register">register</a>
           <a href="/users/login">login</a>
         </nav>
         <%} else{%>
           <nav>
             <a href="/reviews">reviews</a>
-            <a href="/users/register">register</a>
             <a href="/users/logout">logout</a>
             <a href="/users/profile">Profile check</a>
           </nav>

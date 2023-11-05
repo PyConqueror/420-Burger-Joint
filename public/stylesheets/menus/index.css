@@ -83,6 +83,7 @@ tbody tr:hover {
 tbody a {
     color: rgb(9, 125, 76);
     text-decoration: none;
+    font-weight: bold;
 }
 
 tbody a:hover {

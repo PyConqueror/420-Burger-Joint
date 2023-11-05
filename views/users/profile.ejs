@@ -6,6 +6,15 @@
     <title>profile</title>
 </head>
 <body>
+    <header>
+        <nav>
+            <a href="/">home</a>
+            <a href="/menus">menus</a>
+            <a href="/reviews">reviews</a>
+            <a href="/users/logout">logout</a>
+            <a href="/users/profile">Profile check</a>
+          </nav>
+    </header>
     <% if (user) { %>
         <p>Hello <%= user.username %></p>
       <% } else { %>
