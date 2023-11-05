@@ -9,13 +9,13 @@ module.exports = {
 
 async function index(req, res) {
     const reviews = await Review.find({}).populate('user');
-    user = req.user
+    const user = req.user
     res.render('reviews/index', { reviews, user })
 };
 
 async function reviewPage(req, res) {
     const menu = await MenuItem.findById(req.params.id);
-    user = req.user
+    const user = req.user
     res.render('reviews/review', { menu, user })
 };
 

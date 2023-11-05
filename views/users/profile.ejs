@@ -11,5 +11,24 @@
       <% } else { %>
         <p>No user</p>
       <% } %>
+      <h1>Your food reviews</h1>
+      <table>
+          <thead>
+              <tr>
+                  <th>Food</th>
+                  <th>Description</th>
+                  <th>Rating</th>
+              </tr>
+          </thead>
+          <tbody>
+              <% reviews.forEach(function(review) { %>
+                  <tr>
+                      <td><%= review.menuItem.name %></td> 
+                      <td><%= review.comment %></td>
+                      <td><%= review.rating %></td>
+                  </tr>
+              <% }) %>
+          </tbody>
+      </table>
 </body>
 </html>

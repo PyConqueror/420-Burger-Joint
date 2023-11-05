@@ -1,5 +1,7 @@
 const User = require('../model/user');
-const passport = require('passport')
+const passport = require('passport');
+const Review = require('../model/review');
+const user = require('../model/user');
 
 module.exports = {
     registerPage,
@@ -34,7 +36,7 @@ async function register(req, res) {
     const user = new User(req.body);
     await user.save();
     res.redirect('/')
-    }
+};
 
 function logout(req, res){
     req.logout(function() {
@@ -42,7 +44,8 @@ function logout(req, res){
     });
 };
    
-function profile(req, res) {
-    user = req.user
-    res.render('users/profile', {user})
-}
+async function profile(req, res) {
+    const user = req.user
+    const reviews = await Review.find({user: user._id}).populate('menuItem')
+    res.render('users/profile', {user, reviews})
+};
