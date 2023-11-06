@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= menu.name %></title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/menus/show.css">
 </head>
 <body>
     <% if (!user){ %>
@@ -23,34 +23,40 @@
             <a href="/users/profile">Profile check</a>
           </nav>
         <% } %>
-    <h2><%= menu.name %></h2>
-    <p><%= menu.description %></p>
-    <table>
-        <thead>
-            <tr>
-                <th>Username</th>
-                <th>REVIEW</th>
-                <th>RATING</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% if(reviews.length) { %>
-                <% reviews.forEach(review => { %>
+        <h2 class="menu-title"><%= menu.name %></h2>
+    <div class="flex-container">
+        <div class="menu-container">
+            <img src="/images/burger.jpeg" alt="" class="menu-image">
+            <p class="menu-description"><%= menu.description %></p>
+        </div>
+        <div class="reviews-container">
+            <table class="reviews-table">
+                <thead>
                     <tr>
-                        <td><%= review.user.username %></td> 
-                        <td><%= review.comment %></td>
-                        <td><%= review.rating %></td>
+                        <th>Username</th>
+                        <th>REVIEW</th>
+                        <th>RATING</th>
                     </tr>
-                <% }) %>
-            <% } else { %>
-                <tr>
-                    <td colspan="3">No reviews yet.</td>
-                </tr>
-            <% } %>
-        </tbody>
-    </table>
+                </thead>
+                <tbody>
+                    <% if(reviews.length) { %>
+                        <% reviews.forEach(review => { %>
+                            <tr class="review-row">
+                                <td class="username"><%= review.user.username %></td> 
+                                <td class="review-comment"><%= review.comment %></td>
+                                <td class="review-rating"><%= review.rating %></td>
+                            </tr>
+                        <% }) %>
+                    <% } else { %>
+                        <tr class="no-review">
+                            <td colspan="3">No reviews yet.</td>
+                        </tr>
+                    <% } %>
+                </tbody
+            </table>
+        </div>
+    </div>
     <%if (user){ %>
-    <a href="/reviews/<%= menu._id %>">Add A Review</a>
-    <% } %>
+     <a href="/reviews/<%= menu._id %>" class="add-review-button">Add A Review</a>        <% } %>
 </body>
 </html>

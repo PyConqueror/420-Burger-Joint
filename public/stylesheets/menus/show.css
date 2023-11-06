@@ -13,11 +13,9 @@
 body {
     margin: 0;
     font-family: 'CooperLTBT-Bold', 'Arial', sans-serif;
-    background-color: rgb(241,234,209);
-    color: rgb(9, 125, 76);
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+    background-color: rgb(241,234,209); /* Cream background */
+    color: rgb(9, 125, 76); /* Dark green color */
+    line-height: 1.6;
 }
 
 nav {
@@ -43,16 +41,63 @@ nav a:hover {
     color: black;
 }
 
-h1 {
-    text-align: center;
-    font-size: 3em; 
-    margin: 40px 0;
-    font-weight: bold;
+.flex-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* responsive */
+    padding: 20px; 
 }
 
+.menu-container {
+    flex: 1; 
+    max-width: 600px; 
+    margin: 1em; 
+    padding: 1em;
+    border-radius: 25px;
+}
+
+.reviews-container {
+    flex: 1; 
+    max-width: 600px;
+    margin: 1em; 
+    border-radius: 25px; 
+
+}
+
+.menu-title {
+    font-size: 3em; 
+    text-align: center;
+    color: rgb(9, 125, 76); 
+}
+
+.menu-container {
+    background-color: rgb(255,210,48);
+    padding: 1em;
+    border-radius: 25px; 
+    width: 40%;
+}
+
+.menu-image {
+    width: 100%; 
+    height: auto;
+    border-radius: 25px; 
+    border: 2px solid rgb(9, 125, 76);
+}
+
+.menu-description {
+    background-color: rgb(9, 125, 76);
+    padding: 1em;
+    border-radius: 25px;
+    margin-top: 1em;
+    font-family: 'CooperLTBT-Regular', 'Arial', sans-serif;
+    color : rgb(241,234,209);
+    text-align: center;
+    font-size: 1.2em;
+}
+
+
 table {
-    width: 80%;
-    margin-top: 70px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
     background-color: white;
@@ -73,34 +118,15 @@ thead th {
 }
 
 thead th:first-child {
-    border-top-left-radius: 25px; /* Round the top-left corner */
+    border-top-left-radius: 25px;
 }
 
 thead th:last-child {
-    border-top-right-radius: 25px; /* Round the top-right corner */
+    border-top-right-radius: 25px;
 }
 
 tbody td {
     padding: 10px 15px;
     text-align: center;
     border-bottom: 1px solid lightgrey;
-}
-
-tbody tr:hover {
-    background-color: rgb(255,210,48);
-
-}
-
-tbody a {
-    color: rgb(9, 125, 76);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-tbody a:hover {
-    color: black;
-}
-
-td {
-    font-family: 'CooperLTBT-Regular', 'Arial', sans-serif;
 }
