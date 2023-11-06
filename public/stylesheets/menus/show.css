@@ -61,7 +61,8 @@ nav a:hover {
     max-width: 600px;
     margin: 1em; 
     border-radius: 25px; 
-
+    height: 650px;
+    overflow: auto;
 }
 
 .menu-title {
