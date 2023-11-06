@@ -3,30 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/users/register.css">
     <title>Create Account</title>
 </head>
 <body>
     <header>
         <nav>
-          <a href="/menus">menus</a>
-          <a href="/reviews">reviews</a>
+            <a href="/">Home</a>
+            <a href="/menus">menus</a>
+            <a href="/reviews">reviews</a>
         </nav>
       </header>
-    <h2>Register</h2>
+    <h1>Register</h1>
     <form action="/users/register" method="post">
-        <div>Username:</label>
-            <input type="text" id="username" name="username" required>
+        <div>
+            <label>Username:</label>
+            <input type="text" name="username"/>
         </div>
         <div>
             <label>Password:</label>
-            <input name="password" required>
+            <input type="password" name="password"/>
         </div>
         <div>
             <button type="submit">Register</button>
         </div>
     </form>
-    <p><%= error %></p>
     <a href="/users/login">Already have an account? Login</a>
+    <p><%= error %></p>
 </body>
 </html>

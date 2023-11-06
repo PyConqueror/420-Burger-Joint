@@ -52,11 +52,12 @@
                             <td colspan="3">No reviews yet.</td>
                         </tr>
                     <% } %>
-                </tbody
+                    </tbody>
             </table>
+            <%if (user){ %>
+                <a href="/reviews/<%= menu._id %>" class="add-review-button">Add A Review</a> 
+            <% } %>
         </div>
     </div>
-    <%if (user){ %>
-     <a href="/reviews/<%= menu._id %>" class="add-review-button">Add A Review</a>        <% } %>
 </body>
 </html>
