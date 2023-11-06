@@ -18,13 +18,14 @@ body {
     display: flex;
     flex-direction: column;
     height: 100vh;
+    align-items: center;
 }
-
 nav {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
     margin-bottom: 20px;
+    gap: 40px;
 }
 
 nav a {
@@ -52,57 +53,60 @@ h1 {
     font-weight: bold;
 }
 
-table {
-    width: 80%;
-    margin-top: 70px;
-    margin-left: auto;
-    margin-right: auto;
+form {
     background-color: white;
-    border-collapse: collapse; 
-    border-radius: 25px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 300px;
 }
 
-thead {
-    background-color: rgb(9, 125, 76);
-    color: rgb(241,234,209);
+form div {
+    margin-bottom: 1em;
 }
 
-thead th {
-    padding: 10px;
-    text-transform: uppercase;
-    font-size: 1.2em;
+label {
+    display: block;
+    margin-bottom: 0.5em;
+    color: grey;
 }
 
-thead th:first-child {
-    border-top-left-radius: 25px; /* Round the top-left corner */
+input[type="text"],
+input[type="password"],
+button {
+  width: 100%;
+  padding: 0.5em;
+  border: 1px solid grey;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
-thead th:last-child {
-    border-top-right-radius: 25px; /* Round the top-right corner */
+button {
+  border: none;
+  background-color: rgb(9, 125, 76);
+  color: white;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1em;
 }
 
-tbody td {
-    padding: 10px 15px;
-    text-align: center;
-    border-bottom: 1px solid lightgrey;
+button:hover {
+  background-color: rgb(255,210,48);
 }
 
-tbody tr:hover {
-    background-color: rgb(255,210,48);
-
+a {
+  display: block;
+  color: rgb(9, 125, 76);
+  text-decoration: none;
+  margin-top: 1em;
+  transition: color 0.3s;
 }
 
-tbody a {
-    color: rgb(9, 125, 76);
-    text-decoration: none;
-    font-weight: bold;
+a:hover {
+  color: rgb(255,210,48);
 }
 
-tbody a:hover {
-    color: black;
-}
-
-td {
-    font-family: 'CooperLTBT-Regular', 'Arial', sans-serif;
+p {
+  color: red; 
 }
