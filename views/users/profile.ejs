@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/users/profile.css">
     <title>User Profile</title>
 </head>
 <body>
@@ -15,12 +16,7 @@
             <a href="/users/profile">Profile check</a>
           </nav>
     </header>
-    <% if (user) { %>
-        <p>Hello <%= user.username %></p>
-      <% } else { %>
-        <p>No user</p>
-      <% } %>
-      <h1>Your food reviews</h1>
+      <h1>Your Food Reviews</h1>
       <table>
           <thead>
               <tr>

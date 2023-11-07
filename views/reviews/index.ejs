@@ -21,11 +21,12 @@
             <a href="/users/profile">Profile check</a>
           </nav>
         <% } %>
-    <h1>Food Review List</h1>
+    <h1>Food Reviews List</h1>
     <table>
         <thead>
             <tr>
                 <th>Name</th>
+                <th>Food</th>
                 <th>Description</th>
                 <th>Rating</th>
             </tr>
@@ -33,7 +34,8 @@
         <tbody>
             <% reviews.forEach(function(review) { %>
                 <tr>
-                    <td><%= review.user.username %></td> 
+                    <td><%= review.user.username %></td>
+                    <td><%= review.menuItem.name %></td> 
                     <td><%= review.comment %></td>
                     <td><%= review.rating %></td>
                 </tr>

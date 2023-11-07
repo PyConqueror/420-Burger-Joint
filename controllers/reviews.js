@@ -8,7 +8,7 @@ module.exports = {
 };
 
 async function index(req, res) {
-    const reviews = await Review.find({}).populate('user');
+    const reviews = await Review.find({}).populate('user menuItem');
     const user = req.user
     res.render('reviews/index', { reviews, user })
 };

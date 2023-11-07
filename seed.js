@@ -17,11 +17,10 @@ const userList = [
     {username: 'tester1', password: '1234'},
     {username: 'tester2', password:'1234'}]
 
+const reviewList = [
+    {menuItem:'65498a302d03cdcc7f6d8f7d', user: '65498aa91af4809d2b3847ef', rating: 5, comment: 'Delicious'}
+]
 async function seedData() {
-    await MenuItem.deleteMany({});
-    await User.deleteMany({});
-    await MenuItem.create(menuItems);
-    await User.create(userList);
     console.log("Data added succesfully")
 }
 
