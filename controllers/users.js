@@ -27,7 +27,7 @@ function login(req, res, next) {
     })(req, res, next);
 }
 
-async function register(req, res) {
+async function register(req, res, next) {
     const existingUser = await User.findOne({username: req.body.username });
     if (existingUser) {
         res.render('users/register',{error: 'Username already taken. Please choose another.' })
@@ -35,7 +35,10 @@ async function register(req, res) {
     }
     const user = new User(req.body);
     await user.save();
-    res.redirect('/')
+    passport.authenticate('local', {
+        successRedirect: '/',         
+        failureRedirect: '/users/login'
+    })(req, res, next);
 };
 
 function logout(req, res){
