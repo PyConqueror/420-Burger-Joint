@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/reviews/review.css">
     <title>Add Review</title>
 </head>
 <body>
@@ -23,7 +23,7 @@
             <a href="/users/profile">Profile check</a>
           </nav>
         <% } %>
-    <h2>review form</h2>
+    <h1>Add Food Review</h1>
     <form action="/reviews/<%= menu._id %>" method="post">
         <label>Rating:</label>
         <select name="rating" required>
@@ -34,7 +34,7 @@
             <option value="5">5</option>
         </select>
         <label>Comment:</label>
-        <textarea name="comment" required></textarea>
+        <textarea name="comment" required maxlength="100" placeholder="Max 100 Characters"></textarea>
         <button type="submit">Submit Review</button>
     </form>
 </body>

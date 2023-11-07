@@ -13,17 +13,17 @@ module.exports = {
 };
 
 function registerPage(req, res) {
-    res.render('users/register', {error: ' '})
+    res.render('users/register', {error: ' '});
 }
 
 function loginPage(req, res) {
-    res.render('users/login'); 
+    res.render('users/login', {error: ' '}); 
 }
 
 function login(req, res, next) {
     passport.authenticate('local', {
         successRedirect: '/',         
-        failureRedirect: '/users/login' 
+        failureRedirect: '/users/login'
     })(req, res, next);
 }
 
