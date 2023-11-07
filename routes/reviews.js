@@ -11,3 +11,4 @@ router.get('/:id', ensureAuthenticated, reviewsController.reviewPage);
 router.post('/:id', reviewsController.create); 
 router.get('/edit/:id', ensureAuthenticated, reviewsController.editPage);
 router.post('/edit/:id', reviewsController.update);
+router.delete('/delete/:id', reviewsController.delete)  

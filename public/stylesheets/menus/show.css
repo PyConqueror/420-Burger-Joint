@@ -147,7 +147,6 @@ tbody td {
     transition: background-color 0.3s, color 0.3s;
     margin-top: 20px;
     cursor: pointer;
-
 }
 
 .add-review-button:hover {

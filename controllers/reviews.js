@@ -6,7 +6,8 @@ module.exports = {
     create,
     reviewPage,
     editPage,
-    update
+    update,
+    delete: remove
 };
 
 async function index(req, res) {
@@ -53,4 +54,10 @@ async function update (req, res) {
     await updatedReview.save()
     res.redirect('/users/profile')
 } 
+
+async function remove(req, res) {
+    const review = await Review.findById(req.params.id);
+    await review.deleteOne({})
+    res.redirect('/users/profile');
+}
 
