@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/reviews/edit.css">
+    <title>Edit Review</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">home</a>
+            <a href="/menus">menus</a>
+            <a href="/reviews">reviews</a>
+            <a href="/users/logout">logout</a>
+            <a href="/users/profile">Profile check</a>
+          </nav>
+    </header>
+    <h1>Review Edit</h1>
+    <p>Review ID : <%= review._id %></p>
+    <table>
+        <thead>
+            <tr>
+                <th>Food</th>
+                <th>Description</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><%= review.menuItem.name %></a></td> 
+                <td><%= review.comment %></a></td>
+                <td><%= review.rating %></a></td>
+            </tr>
+        </tbody>
+    </table>
+    <form action="/reviews/edit/<%= review._id %>" method="post">
+        <label>Rating:</label>
+        <select name="rating" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <label>Comment:</label>
+        <textarea name="comment" required maxlength="100" placeholder="Max 100 Characters"></textarea>
+        <button type="submit">Edit Review</button>
+</body>
+</html>

@@ -8,4 +8,6 @@ module.exports = router;
 
 router.get('/', reviewsController.index);
 router.get('/:id', ensureAuthenticated, reviewsController.reviewPage);
-router.post('/:id', reviewsController.create);  
+router.post('/:id', reviewsController.create); 
+router.get('/edit/:id', ensureAuthenticated, reviewsController.editPage);
+router.post('/edit/:id', reviewsController.update);

@@ -20,6 +20,7 @@
       <table>
           <thead>
               <tr>
+                  <th>Details</th>
                   <th>Food</th>
                   <th>Description</th>
                   <th>Rating</th>
@@ -28,9 +29,10 @@
           <tbody>
               <% reviews.forEach(function(review) { %>
                   <tr>
-                      <td><%= review.menuItem.name %></td> 
-                      <td><%= review.comment %></td>
-                      <td><%= review.rating %></td>
+                    <td><a href="/reviews/edit/<%= review._id %>">Details</a></td>
+                    <td><%= review.menuItem.name %></a></td> 
+                    <td><%= review.comment %></a></td>
+                    <td><%= review.rating %></a></td>
                   </tr>
               <% }) %>
           </tbody>

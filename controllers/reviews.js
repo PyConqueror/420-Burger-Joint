@@ -4,7 +4,9 @@ const MenuItem = require('../model/menu');
 module.exports = {
     index,
     create,
-    reviewPage
+    reviewPage,
+    editPage,
+    update
 };
 
 async function index(req, res) {
@@ -34,3 +36,21 @@ async function create(req, res) {
     await menuItem.save();
     res.redirect(/menus/ + menuItem._id); 
 };
+
+async function editPage(req, res) {
+    const review = await Review.findById(req.params.id).populate('menuItem')
+    res.render('reviews/edit', {review})
+}
+
+async function update (req, res) {
+    const id = req.params.id
+    const rating = req.body.rating
+    const comment = req.body.comment
+    const updatedReview = await Review.findByIdAndUpdate(id, {
+        rating: rating,
+        comment: comment
+    })
+    await updatedReview.save()
+    res.redirect('/users/profile')
+} 
+

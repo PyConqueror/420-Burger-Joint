@@ -54,7 +54,65 @@ h1 {
     font-weight: bold;
 }
 
+table {
+    width: 80%;
+    max-width: 1000px;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-collapse: collapse; 
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+thead {
+    background-color: rgb(9, 125, 76);
+    color: rgb(241,234,209);
+}
+
+thead th {
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 1.2em;
+}
+
+thead th:first-child {
+    border-top-left-radius: 25px; /* Round the top-left corner */
+}
+
+thead th:last-child {
+    border-top-right-radius: 25px; /* Round the top-right corner */
+}
+
+tbody td {
+    padding: 10px 15px;
+    text-align: center;
+    border-bottom: 1px solid lightgrey;
+}
+
+tbody tr:hover {
+    background-color: rgb(255,210,48);
+
+}
+
+tbody a {
+    color: rgb(9, 125, 76);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+td {
+    font-family: 'CooperLTBT-Regular', 'Arial', sans-serif;
+}
+
+p {
+    text-align: center;
+    margin-top: 0;
+}
+
 form {
+    margin-top: 20px;
     background-color: white;
     padding: 2em;
     border-radius: 8px;
