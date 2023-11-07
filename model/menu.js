@@ -8,7 +8,8 @@ const menuSchema = new Schema({
     reviews: [{
         type: Schema.Types.ObjectId,
         ref: 'Review'
-    }]
+    }],
+    imagePath: String
 }, {
     timestamps: true
 });
