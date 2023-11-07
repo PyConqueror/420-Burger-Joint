@@ -11,6 +11,18 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
+    location: {
+        type: String,
+        default: 'none'
+    },
+    about: {
+        type: String,
+        default: 'none'
+    },
+    imagePath: {
+        type: String,
+        default: '/images/profile.jpeg'
+    },
 
 }, {
     timestamps: true
