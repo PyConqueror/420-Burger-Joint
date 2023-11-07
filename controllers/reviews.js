@@ -56,8 +56,7 @@ async function update (req, res) {
 } 
 
 async function remove(req, res) {
-    const review = await Review.findById(req.params.id);
-    await review.deleteOne({})
+    await Review.findByIdAndDelete(req.params.id);
     res.redirect('/users/profile');
 }
 
