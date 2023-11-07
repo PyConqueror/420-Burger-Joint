@@ -1,0 +1,107 @@
+@font-face {
+    font-family: 'CooperLTBT-Bold';
+    src: url('/fonts/CooperLtBT-Bold.ttf') format('truetype');
+    font-weight: bold;
+}
+  
+@font-face {
+    font-family: 'CooperLTBT-Regular';
+    src: url('/fonts/CooperLtBT-Regular.ttf') format('truetype');
+    font-weight: normal;
+}
+
+body {
+    margin: 0;
+    font-family: 'CooperLTBT-Bold', 'Arial', sans-serif;
+    background-color: rgb(241,234,209);
+    color: rgb(9, 125, 76);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 40px;
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(241, 234, 209);
+    background-color: rgb(9, 125, 76);
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1em;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer
+}
+
+nav a:hover {
+    background-color: rgb(255,210,48);
+    color: rgb(9, 125, 76);
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em; 
+    margin: 40px 0;
+    font-weight: bold;
+}
+
+table {
+    width: 80%;
+    max-width: 1000px;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    border-collapse: collapse; 
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+thead {
+    background-color: rgb(9, 125, 76);
+    color: rgb(241,234,209);
+}
+
+thead th {
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 1.2em;
+}
+
+thead th:first-child {
+    border-top-left-radius: 25px; /* Round the top-left corner */
+}
+
+thead th:last-child {
+    border-top-right-radius: 25px; /* Round the top-right corner */
+}
+
+tbody td {
+    padding: 10px 15px;
+    text-align: center;
+    border-bottom: 1px solid lightgrey;
+}
+
+tbody tr:hover {
+    background-color: rgb(255,210,48);
+
+}
+
+tbody a {
+    color: rgb(9, 125, 76);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+td {
+    font-family: 'CooperLTBT-Regular', 'Arial', sans-serif;
+}
