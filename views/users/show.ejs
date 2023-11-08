@@ -39,7 +39,6 @@
       <table>
           <thead>
               <tr>
-                  <th></th>
                   <th>Food</th>
                   <th>Description</th>
                   <th>Rating</th>
@@ -49,7 +48,6 @@
             <% if (reviews.length) {%>
               <% reviews.forEach(function(review) { %>
                   <tr>
-                    <td><a href="/reviews/edit/<%= review._id %>">Edit</a></td>
                     <td><%= review.menuItem.name %></a></td> 
                     <td><%= review.comment %></a></td>
                     <td><%= review.rating %></a></td>

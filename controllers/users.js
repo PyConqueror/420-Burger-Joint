@@ -72,6 +72,6 @@ async function show(req, res) {
     const user = req.user
     const id = req.params.id
     const profile = await User.findById(id)
-    const reviews = await Review.find({user: id})
+    const reviews = await Review.find({user: id}).populate('menuItem')
     res.render('users/show', {user, profile, reviews})
 }
