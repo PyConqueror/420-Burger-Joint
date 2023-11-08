@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/users/edit.css">
+    <title>Edit Profile</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/">home</a>
+            <a href="/menus">menus</a>
+            <a href="/reviews">reviews</a>
+            <a href="/users/logout">logout</a>
+            <a href="/users/profile">Profile check</a>
+          </nav>
+    </header>
+    <h1>Edit Profile</h1>
+        <form action="/users/profile/<%= user._id %>/edit" method="post">
+            <label for="username">Name:</label>
+            <input type="text" name="username" value="<%= user.username%>" required>
+            <label for="location">Location:</label>
+            <input type="text" name="location" value="none" required>
+            <label for="about">About:</label>
+            <textarea name="about" require maxlength="50" placeholder="Max 50 Characters"></textarea>
+            <button type="submit">Save Changes</button>
+        </form>
+</body>

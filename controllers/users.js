@@ -9,7 +9,9 @@ module.exports = {
     login,
     register,
     logout,
-    profile
+    profile,
+    edit,
+    update
 };
 
 function registerPage(req, res) {
@@ -52,3 +54,16 @@ async function profile(req, res) {
     const reviews = await Review.find({user: user._id}).populate('menuItem')
     res.render('users/profile', {user, reviews})
 };
+
+async function edit(req, res) {
+    const user = await User.findById(req.params.id)
+    res.render('users/edit', {user})
+};
+
+async function update(req, res) {
+    const id = req.params.id
+    const updatedProfile = await User.findByIdAndUpdate(id, req.body)
+    await updatedProfile.save()
+    res.redirect('/users/profile')
+}
+

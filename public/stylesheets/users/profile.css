@@ -17,7 +17,8 @@ body {
     color: rgb(9, 125, 76);
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
+    align-items: center;
 }
 
 nav {
@@ -25,6 +26,7 @@ nav {
     justify-content: space-around;
     margin-top: 20px;
     margin-bottom: 20px;
+    gap: 40px;
 }
 
 nav a {
@@ -52,19 +54,12 @@ h1 {
     font-weight: bold;
 }
 
-h1 {
-    text-align: center;
-    font-size: 3em; 
-    margin: 40px 0;
-    font-weight: bold;
-}
-
 table {
     width: 80%;
     max-width: 1000px;
-    margin-top: 70px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 50px;
     background-color: white;
     border-collapse: collapse; 
     border-radius: 25px;
@@ -110,3 +105,28 @@ tbody a {
 td {
     font-family: 'CooperLTBT-Regular', 'Arial', sans-serif;
 }
+
+.user-details {
+    display: flex;
+    margin-bottom: 0;
+    background-color: white;
+    padding: 40px;
+    border-radius: 25px;
+    flex-direction: column;
+    border: 2px solid black;
+    text-align: center;
+    align-items: center;
+}
+
+.profile-picture img {
+    width: 200px;
+    height: 200px; 
+    border-radius: 35px; 
+    object-fit: cover; /* to maintain aspect ratio */
+    border: 2px solid black;
+}
+
+.user-details a {
+    text-decoration: none;
+}
+
