@@ -2,6 +2,7 @@ const User = require('../model/user');
 const passport = require('passport');
 const Review = require('../model/review');
 const user = require('../model/user');
+const cloudinary = require('../utils/cloudinary')
 
 module.exports = {
     registerPage,
@@ -12,7 +13,8 @@ module.exports = {
     profile,
     edit,
     update,
-    show
+    show,
+    profilepic
 };
 
 function registerPage(req, res) {
@@ -74,4 +76,14 @@ async function show(req, res) {
     const profile = await User.findById(id)
     const reviews = await Review.find({user: id}).populate('menuItem')
     res.render('users/show', {user, profile, reviews})
+}
+
+async function profilepic(req, res) {
+    const id = req.params.id
+    const result = await cloudinary.uploader.upload(req.file.path);
+    const update = await User.findByIdAndUpdate(id, {
+        imagePath: result.secure_url
+    })
+    await update.save()
+    res.redirect('/users/profile')
 }

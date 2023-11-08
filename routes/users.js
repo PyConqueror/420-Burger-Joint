@@ -1,8 +1,8 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 const usersController = require('../controllers/users');
 const ensureAuthenticated = require('../config/ensureAuthenticated');
-
+const upload = require('../utils/multer')
 
 
 router.get('/login', usersController.loginPage);
@@ -14,5 +14,7 @@ router.get('/profile', ensureAuthenticated, usersController.profile);
 router.get('/profile/:id/edit', ensureAuthenticated, usersController.edit);
 router.post('/profile/:id/edit', ensureAuthenticated, usersController.update);
 router.get('/profile/:id/show', usersController.show)
+router.post('/profile/:id/profilepic', upload.single('profilepic'), usersController.profilepic)
+
 module.exports = router;
 

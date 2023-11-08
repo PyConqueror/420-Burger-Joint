@@ -19,11 +19,15 @@
     <h1>Edit Profile</h1>
         <form action="/users/profile/<%= user._id %>/edit" method="post">
             <label for="username">Name:</label>
-            <input type="text" name="username" value="<%= user.username%>" required>
+            <input type="text" name="username" value="<%= user.username %>" required>
             <label for="location">Location:</label>
-            <input type="text" name="location" value="none" required>
+            <input type="text" name="location" value="<%= user.location %>"" required>
             <label for="about">About:</label>
             <textarea name="about" require maxlength="50" placeholder="Max 50 Characters"></textarea>
             <button type="submit">Save Changes</button>
+        </form>
+        <form action="/users/profile/<%= user._id %>/profilepic" method="post" enctype="multipart/form-data">
+            <input type="file" name="profilepic">
+            <button type="submit">Upload Profile Picture</button>
         </form>
 </body>
