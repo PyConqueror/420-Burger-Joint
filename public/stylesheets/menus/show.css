@@ -134,6 +134,12 @@ tbody td {
     border-bottom: 1px solid lightgrey;
 }
 
+tbody a {
+    color: rgb(9, 125, 76);
+    text-decoration: none;
+    font-weight: bold;
+}
+
 .add-review-button {
     display: inline-block;
     text-decoration: none; 

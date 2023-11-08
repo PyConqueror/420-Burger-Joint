@@ -42,7 +42,7 @@
                     <% if(reviews.length) { %>
                         <% reviews.forEach(review => { %>
                             <tr class="review-row">
-                                <td class="username"><%= review.user.username %></td> 
+                                <td><a href="/users/profile/<%=review.user._id%>/show"><%= review.user.username %></td> 
                                 <td class="review-comment"><%= review.comment %></td>
                                 <td class="review-rating"><%= review.rating %></td>
                             </tr>
