@@ -25,7 +25,8 @@
     <table>
         <thead>
             <tr>
-                <th>Name</th>
+                <th></th>
+                <th>User</th>
                 <th>Food</th>
                 <th>Description</th>
                 <th>Rating</th>
@@ -34,7 +35,8 @@
         <tbody>
             <% reviews.forEach(function(review) { %>
                 <tr>
-                    <td><%= review.user.username %></td>
+                    <td><img src="<%= review.user.imagePath %>" class="profile-picture"></td>
+                    <td><a href="users/profile/<%=review.user._id%>/show"><%= review.user.username %></a></td>
                     <td><%= review.menuItem.name %></td> 
                     <td><%= review.comment %></td>
                     <td><%= review.rating %></td>

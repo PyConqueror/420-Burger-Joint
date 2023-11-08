@@ -11,7 +11,8 @@ module.exports = {
     logout,
     profile,
     edit,
-    update
+    update,
+    show
 };
 
 function registerPage(req, res) {
@@ -67,3 +68,10 @@ async function update(req, res) {
     res.redirect('/users/profile')
 }
 
+async function show(req, res) {
+    const user = req.user
+    const id = req.params.id
+    const profile = await User.findById(id)
+    const reviews = await Review.find({user: id})
+    res.render('users/show', {user, profile, reviews})
+}

@@ -17,8 +17,7 @@ body {
     color: rgb(9, 125, 76);
     display: flex;
     flex-direction: column;
-    height: 100vh;
-
+    min-height: 100vh;
 }
 
 nav {
@@ -60,6 +59,7 @@ table {
     margin-top: 70px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 40px;
     background-color: white;
     border-collapse: collapse; 
     border-radius: 25px;
@@ -105,3 +105,11 @@ tbody a {
 td {
     font-family: 'CooperLTBT-Regular', 'Arial', sans-serif;
 }
+
+.profile-picture {
+    border-radius: 50%; 
+    border: 2px solid black;
+    width: 60px;
+    height: 60px; /* Same as width to maintain the round shape */
+  }
+  

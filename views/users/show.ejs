@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/users/profile.css">
+    <title><%= profile.username %>'s Profile</title>
+</head>
+<body>
+    <header>
+        <% if (!user){%>
+            <nav>
+              <a href="/menus">menus</a>
+              <a href="/reviews">reviews</a>
+              <a href="/users/register">register</a>
+              <a href="/users/login">login</a>
+            </nav>
+            <% } else{%>
+              <nav>
+                <a href="/menus">menus</a>
+                <a href="/reviews">reviews</a>
+                <a href="/users/logout">logout</a>
+                <a href="/users/profile">Profile check</a>
+              </nav>
+            <% } %>
+    </header>
+    <h1><%= profile.username %>'s Profile Details</h1>
+    <div class="user-details">
+        <div class="profile-picture">
+            <img src="<%= profile.imagePath %>"/>
+        </div>
+        <div class="user-info">
+            <h2><%= profile.username %></h2>
+            <p><strong>Location:</strong> <%= profile.location %></p>
+            <p><strong>About:</strong> <%= profile.about %></p>
+        </div>
+    </div>
+      <h1><%= profile.username %>'s Food Reviews</h1>
+      <table>
+          <thead>
+              <tr>
+                  <th></th>
+                  <th>Food</th>
+                  <th>Description</th>
+                  <th>Rating</th>
+              </tr>
+          </thead>
+          <tbody>
+            <% if (reviews.length) {%>
+              <% reviews.forEach(function(review) { %>
+                  <tr>
+                    <td><a href="/reviews/edit/<%= review._id %>">Edit</a></td>
+                    <td><%= review.menuItem.name %></a></td> 
+                    <td><%= review.comment %></a></td>
+                    <td><%= review.rating %></a></td>
+                  </tr>
+              <% }) %>
+            <%} else { %>
+                <tr class="no-review">
+                    <td colspan="3">No reviews yet.</td>
+                </tr>
+            <% } %>%>
+          </tbody>
+      </table>
+</body>
+</html>
