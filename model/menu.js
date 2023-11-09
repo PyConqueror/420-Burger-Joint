@@ -5,11 +5,11 @@ const menuSchema = new Schema({
     name: String,
     description: String,
     price: Number,
-    reviews: [{
+    reviews: [{ //one to many
         type: Schema.Types.ObjectId,
         ref: 'Review'
     }],
-    imagePath: String
+    imagePath: String 
 }, {
     timestamps: true
 });

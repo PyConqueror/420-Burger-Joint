@@ -7,26 +7,26 @@
     <link rel="stylesheet" href="/stylesheets/menus/show.css">
 </head>
 <body>
-    <% if (!user){ %>
+    <% if (!user) { %>
         <nav>
-          <a href="/">Home</a>
-          <a href="/menus">menus</a>
-          <a href="/reviews">reviews</a>
-          <a href="/users/login">login</a>
+            <a href="/">Home</a>
+            <a href="/menus">menus</a>
+            <a href="/reviews">reviews</a>
+            <a href="/users/login">login</a>
         </nav>
-        <%} else{%>
-          <nav>
+    <% } else { %>
+        <nav>
             <a href="/">Home</a>
             <a href="/menus">menus</a>
             <a href="/reviews">reviews</a>
             <a href="/users/logout">logout</a>
             <a href="/users/profile">Profile check</a>
-          </nav>
-        <% } %>
-        <h2 class="menu-title"><%= menu.name %></h2>
+        </nav>
+    <% } %>
+    <h2 class="menu-title"><%= menu.name %></h2>
     <div class="flex-container">
         <div class="menu-container">
-            <img src=<%= menu.imagePath %> alt="" class="menu-image">
+            <img src="<%= menu.imagePath %>" alt="" class="menu-image">
             <p class="menu-description"><%= menu.description %></p>
         </div>
         <div class="reviews-container">
@@ -39,10 +39,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <% if(reviews.length) { %>
+                    <% if (reviews.length) { %>
                         <% reviews.forEach(review => { %>
                             <tr class="review-row">
-                                <td><a href="/users/profile/<%=review.user._id%>/show"><%= review.user.fullname %></td> 
+                                <td><a href="/users/profile/<%= review.user._id %>/show"><%= review.user.fullname %></a></td>
                                 <td class="review-comment"><%= review.comment %></td>
                                 <td class="review-rating"><%= review.rating %></td>
                             </tr>
@@ -52,10 +52,10 @@
                             <td colspan="3">No reviews yet.</td>
                         </tr>
                     <% } %>
-                    </tbody>
+                </tbody>
             </table>
-            <%if (user){ %>
-                <a href="/reviews/<%= menu._id %>" class="add-review-button">Add A Review</a> 
+            <% if (user) { %>
+                <a href="/reviews/<%= menu._id %>" class="add-review-button">Add A Review</a>
             <% } %>
         </div>
     </div>

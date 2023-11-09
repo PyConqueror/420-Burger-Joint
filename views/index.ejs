@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>420 Burger Joint</title>
-    <link rel='stylesheet' href='/stylesheets/mainpage.css' />
-  </head>
-  <body>
-    <header>
-      <% if (!user){%>
-      <nav>
-        <a href="/menus">menus</a>
-        <a href="/reviews">reviews</a>
-        <a href="/users/register">register</a>
-        <a href="/users/login">login</a>
-      </nav>
-      <% } else{%>
-        <nav>
-          <a href="/menus">menus</a>
-          <a href="/reviews">reviews</a>
-          <a href="/users/logout">logout</a>
-          <a href="/users/profile">Profile check</a>
-        </nav>
-      <% } %>
-    </header>
-    <div class="restaurant">
-      <h1>420 BURGER JOINT.CO</h1>
-      <p>"Crafting Burgers, Creating Memories – Dive into Deliciousness!"</p>
-    </div>
-    <h3>Kenny Hills, Greater Kuala Lumpur</h3>
-  </body>
+<head>
+  <title>420 Burger Joint</title>
+  <link rel='stylesheet' href='/stylesheets/mainpage.css' />
+</head>
+<body>
+  <header>
+    <% if (!user) { %>
+    <nav>
+      <a href="/menus">menus</a>
+      <a href="/reviews">reviews</a>
+      <a href="/users/register">register</a>
+      <a href="/users/login">login</a>
+    </nav>
+    <% } else { %>
+    <nav>
+      <a href="/menus">menus</a>
+      <a href="/reviews">reviews</a>
+      <a href="/users/logout">logout</a>
+      <a href="/users/profile">Profile check</a>
+    </nav>
+    <% } %>
+  </header>
+  <div class="restaurant">
+    <h1>420 BURGER JOINT.CO</h1>
+    <p>"Crafting Burgers, Creating Memories – Dive into Deliciousness!"</p>
+  </div>
+  <h3>Kenny Hills, Greater Kuala Lumpur</h3>
+</body>
 </html>

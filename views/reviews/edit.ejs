@@ -14,10 +14,10 @@
             <a href="/reviews">reviews</a>
             <a href="/users/logout">logout</a>
             <a href="/users/profile">Profile check</a>
-          </nav>
+        </nav>
     </header>
     <h1>Review Edit</h1>
-    <p>Review ID : <%= review._id %></p>
+    <p>Review ID: <%= review._id %></p>
     <table>
         <thead>
             <tr>
@@ -28,27 +28,27 @@
         </thead>
         <tbody>
             <tr>
-                <td><%= review.menuItem.name %></a></td> 
-                <td><%= review.comment %></a></td>
-                <td><%= review.rating %></a></td>
+                <td><%= review.menuItem.name %></td> 
+                <td><%= review.comment %></td>
+                <td><%= review.rating %></td>
             </tr>
         </tbody>
     </table>
     <form action="/reviews/edit/<%= review._id %>" method="post">
-        <label>Rating:</label>
-        <select name="rating" required>
+        <label for="rating">Rating:</label>
+        <select name="rating" id="rating" required>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
-        <label>Comment:</label>
-        <textarea name="comment" required maxlength="100" placeholder="Max 100 Characters"></textarea>
+        <label for="comment">Comment:</label>
+        <textarea name="comment" id="comment" required maxlength="100" placeholder="Max 100 Characters"></textarea>
         <button type="submit">Edit Review</button>
-        </form>
-        <form action="/reviews/<%= review._id %>?_method=delete" method="post">
+    </form>
+    <form action="/reviews/<%= review._id %>?_method=delete" method="post">
         <button class="delete" type="submit" onclick="return confirm('Are you sure you want to delete this review?');">Delete Review</button>
-        </form> 
+    </form> 
 </body>
 </html>

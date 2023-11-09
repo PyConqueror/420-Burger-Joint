@@ -7,34 +7,34 @@
     <title>Add Review</title>
 </head>
 <body>
-    <% if (!user){%>
-        <nav>
-          <a href="/">home</a>
-          <a href="/menus">menus</a>
-          <a href="/reviews">reviews</a>
-          <a href="/users/login">login</a>
-        </nav>
-        <%} else{%>
-          <nav>
-            <a href="/">home</a>
-            <a href="/menus">menus</a>
-            <a href="/reviews">reviews</a>
-            <a href="/users/logout">logout</a>
-            <a href="/users/profile">Profile check</a>
-          </nav>
-        <% } %>
+    <% if (!user) { %>
+    <nav>
+        <a href="/">home</a>
+        <a href="/menus">menus</a>
+        <a href="/reviews">reviews</a>
+        <a href="/users/login">login</a>
+    </nav>
+    <% } else { %>
+    <nav>
+        <a href="/">home</a>
+        <a href="/menus">menus</a>
+        <a href="/reviews">reviews</a>
+        <a href="/users/logout">logout</a>
+        <a href="/users/profile">Profile check</a>
+    </nav>
+    <% } %>
     <h1>Add Food Review</h1>
     <form action="/reviews/<%= menu._id %>" method="post">
-        <label>Rating:</label>
-        <select name="rating" required>
+        <label for="rating">Rating:</label>
+        <select name="rating" id="rating" required>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
         </select>
-        <label>Comment:</label>
-        <textarea name="comment" required maxlength="100" placeholder="Max 100 Characters"></textarea>
+        <label for="comment">Comment:</label>
+        <textarea name="comment" id="comment" required maxlength="100" placeholder="Max 100 Characters"></textarea>
         <button type="submit">Submit Review</button>
     </form>
 </body>

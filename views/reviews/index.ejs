@@ -7,20 +7,20 @@
     <title>Food Reviews</title>
 </head>
 <body>
-    <% if (!user){%>
-        <nav>
-          <a href="/">home</a>
-          <a href="/menus">menus</a>
-          <a href="/users/login">login</a>
-        </nav>
-        <%} else{%>
-          <nav>
-            <a href="/">home</a>
-            <a href="/menus">menus</a>
-            <a href="/users/logout">logout</a>
-            <a href="/users/profile">Profile check</a>
-          </nav>
-        <% } %>
+    <% if (!user) { %>
+    <nav>
+        <a href="/">home</a>
+        <a href="/menus">menus</a>
+        <a href="/users/login">login</a>
+    </nav>
+    <% } else { %>
+    <nav>
+        <a href="/">home</a>
+        <a href="/menus">menus</a>
+        <a href="/users/logout">logout</a>
+        <a href="/users/profile">Profile check</a>
+    </nav>
+    <% } %>
     <h1>Food Reviews List</h1>
     <table>
         <thead>
@@ -34,14 +34,14 @@
         </thead>
         <tbody>
             <% reviews.forEach(function(review) { %>
-                <tr>
-                    <td><img src="<%= review.user.imagePath %>" class="profile-picture"></td>
-                    <td><a href="users/profile/<%=review.user._id%>/show"><%= review.user.fullname %></a></td>
-                    <td><%= review.menuItem.name %></td> 
-                    <td><%= review.comment %></td>
-                    <td><%= review.rating %></td>
-                </tr>
-            <% }) %>
+            <tr>
+                <td><img src="<%= review.user.imagePath %>" class="profile-picture"></td>
+                <td><a href="users/profile/<%= review.user._id %>/show"><%= review.user.fullname %></a></td>
+                <td><%= review.menuItem.name %></td> 
+                <td><%= review.comment %></td>
+                <td><%= review.rating %></td>
+            </tr>
+            <% }); %>
         </tbody>
     </table>
 </body>

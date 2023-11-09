@@ -25,7 +25,7 @@ const userSchema = new Schema({
     },
     imagePath: {
         type: String,
-        default: '/images/profile.jpeg'
+        default: '/images/profile.jpeg' //default profile picture when creating account
     },
 
 }, {

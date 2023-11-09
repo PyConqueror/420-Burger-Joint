@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema({
-    menuItem: {
+    menuItem: { //one to one
         type: Schema.Types.ObjectId,
         ref: 'MenuItem',
         required: true
     },
-    user: {
+    user: { // one to one
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true

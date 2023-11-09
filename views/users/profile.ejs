@@ -14,7 +14,7 @@
             <a href="/reviews">reviews</a>
             <a href="/users/logout">logout</a>
             <a href="/users/profile">Profile check</a>
-          </nav>
+        </nav>
     </header>
     <h1>Your Profile Details</h1>
     <div class="user-details">
@@ -25,35 +25,35 @@
             <h2><%= user.fullname %></h2>
             <p><strong>Location:</strong> <%= user.location %></p>
             <p><strong>About:</strong> <%= user.about %></p>
-        <a href="/users/profile/<%= user._id%>/edit">Edit Profile</a>
+            <a href="/users/profile/<%= user._id %>/edit">Edit Profile</a>
         </div>
     </div>
-      <h1>Your Food Reviews</h1>
-      <table>
-          <thead>
-              <tr>
-                  <th></th>
-                  <th>Food</th>
-                  <th>Description</th>
-                  <th>Rating</th>
-              </tr>
-          </thead>
-          <tbody>
-            <% if (reviews.length) {%>
-              <% reviews.forEach(function(review) { %>
-                  <tr>
-                    <td><a href="/reviews/edit/<%= review._id %>">Edit</a></td>
-                    <td><%= review.menuItem.name %></a></td> 
-                    <td><%= review.comment %></a></td>
-                    <td><%= review.rating %></a></td>
-                  </tr>
-              <% }) %>
-            <%} else { %>
+    <h1>Your Food Reviews</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Edit</th>
+                <th>Food</th>
+                <th>Description</th>
+                <th>Rating</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (reviews.length) { %>
+                <% reviews.forEach(function(review) { %>
+                    <tr>
+                        <td><a href="/reviews/edit/<%= review._id %>">Edit</a></td>
+                        <td><%= review.menuItem.name %></td> 
+                        <td><%= review.comment %></td>
+                        <td><%= review.rating %></td>
+                    </tr>
+                <% }); %>
+            <% } else { %>
                 <tr class="no-review">
                     <td colspan="4">No reviews yet.</td>
                 </tr>
-            <% } %>%>
-          </tbody>
-      </table>
+            <% } %>
+        </tbody>
+    </table>
 </body>
 </html>

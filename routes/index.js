@@ -1,8 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-
-router.get('/', function(req, res, next) {
+router.get('/', function(req, res, next) { //main landing page
   user = req.user
   res.render('index');
 });

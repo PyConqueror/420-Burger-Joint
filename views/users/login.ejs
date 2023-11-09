@@ -9,26 +9,26 @@
 <body>
     <header>
         <nav>
-          <a href="/">Home</a>
-          <a href="/menus">menus</a>
-          <a href="/reviews">reviews</a>
+            <a href="/">Home</a>
+            <a href="/menus">menus</a>
+            <a href="/reviews">reviews</a>
         </nav>
-      </header>
-    <h1>Login Page</h2>
+    </header>
+    <h1>Login Page</h1>
     <form action="/users/login" method="post">
         <div>
-            <label>Username:</label>
-            <input type="text" name="username"/>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"/>
         </div>
         <div>
-            <label>Password:</label>
-            <input type="password" name="password"/>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"/>
         </div>
         <div>
             <input type="submit" value="Login"/>
         </div>
     </form>
-    <a href="/users/register">Dont Have an account ? Register</a>
+    <a href="/users/register">Don't have an account? Register</a>
     <p><%= error %></p>
 </body>
 </html>
