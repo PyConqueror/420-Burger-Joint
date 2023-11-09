@@ -21,6 +21,7 @@ const reviewList = [
     {menuItem:'65498a302d03cdcc7f6d8f7d', user: '65498aa91af4809d2b3847ef', rating: 5, comment: 'Delicious'}
 ]
 async function seedData() {
+    await MenuItem.create(menuItems)
     console.log("Data added succesfully")
 }
 
@@ -32,4 +33,3 @@ async function logData() {
 }
 
 seedData()
-logData()

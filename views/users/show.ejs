@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/users/profile.css">
-    <title><%= profile.username %>'s Profile</title>
+    <title><%= profile.fullname %>'s Profile</title>
 </head>
 <body>
     <header>
@@ -30,12 +30,12 @@
             <img src="<%= profile.imagePath %>"/>
         </div>
         <div class="user-info">
-            <h2><%= profile.username %></h2>
+            <h2><%= profile.fullname %></h2>
             <p><strong>Location:</strong> <%= profile.location %></p>
             <p><strong>About:</strong> <%= profile.about %></p>
         </div>
     </div>
-      <h1><%= profile.username %>'s Food Reviews</h1>
+      <h1><%= profile.fullname %>'s Food Reviews</h1>
       <table>
           <thead>
               <tr>

@@ -36,7 +36,7 @@
             <% reviews.forEach(function(review) { %>
                 <tr>
                     <td><img src="<%= review.user.imagePath %>" class="profile-picture"></td>
-                    <td><a href="users/profile/<%=review.user._id%>/show"><%= review.user.username %></a></td>
+                    <td><a href="users/profile/<%=review.user._id%>/show"><%= review.user.fullname %></a></td>
                     <td><%= review.menuItem.name %></td> 
                     <td><%= review.comment %></td>
                     <td><%= review.rating %></td>
