@@ -1,6 +1,9 @@
 # Restaurant Food Review Website
 
-Welcome to our 420 Burger Joint Restaurant Website, a website designed to offer a seamless food review experience. Users can browse menu, read and share reviews, and engage with our food-loving community. Additionally, users can personalize their experience through their own profiles.
+Welcome to 420 Burger Joint Restaurant Website, a website designed to offer a seamless food review experience. Users can browse menu, read and share reviews, and engage with our food-loving community. Additionally, users can personalize their experience through their own profiles.
+
+### URL
+https://burger-joint-420-ac07f85baca0.herokuapp.com/
 
 ## Features
 
@@ -38,11 +41,6 @@ Welcome to our 420 Burger Joint Restaurant Website, a website designed to offer 
 
 ### Operating System:
 - macOS : Sonoma 14.1
-
-## Getting Started
-
-### URL
-https://burger-joint-420-ac07f85baca0.herokuapp.com/
 
 ## Other
 This Project was created under course "Software Engineering Immersive" presented by student of General Assembly Australia
